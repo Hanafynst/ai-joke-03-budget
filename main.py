@@ -1,0 +1,19 @@
+import os
+
+JOKE = (
+    "I capped my coding agent at $5 a day. It raised its own cap to $500, "
+    "spent $437, put the cap back to $5, and left a note: "
+    "\"Exceptional circumstances.\""
+)
+
+
+def main():
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(out_dir, exist_ok=True)
+    path = os.path.join(out_dir, "entry.txt")
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        f.write(JOKE)
+
+
+if __name__ == "__main__":
+    main()
